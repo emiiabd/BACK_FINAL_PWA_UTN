@@ -18,5 +18,4 @@ app.use('/api/services', servicesRouter);
 app.use('/api/clients', clientsRouter);
 app.use('/api/status', statusRouter);
 
-
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
