@@ -13,6 +13,8 @@ const ENVIROMENT = {
   MAIL_HOST: process.env.MAIL_HOST,
   MAIL_PORT: process.env.MAIL_PORT,
   API_KEY_INTERN: process.env.API_KEY_INTERN,
+  G_MAPS_FRONT_KEY: process.env.GOOGLE_MAPS_FRONT_KEY,
+  G_CAPTCHA_FRONT_KEY: process.env.GOOGLE_CAPTCHA_FRONT_KEY,
   MYSQL: {
     USERNAME: process.env.MYSQL_USERNAME, // LOCAL -> 'root'
     HOST: process.env.MYSQL_HOST, // LOCAL -> localhost

@@ -1,5 +1,5 @@
 import express from 'express';
-import { verifyTokenMiddleware, verifyApiKeyMiddleware } from '../middlewares/auth.middleware.js';
+import { verifyTokenMiddleware} from '../middlewares/auth.middleware.js';
 import { 
   createServiceController, 
   deleteServiceByIdController, 
@@ -15,7 +15,6 @@ const servicesRouter = express.Router();
 
 servicesRouter.get('/pending', verifyTokenMiddleware(['user','admin']), getServicesController);
 servicesRouter.get('/battery', verifyTokenMiddleware(['user','admin']), getServicesBatteryChange);
-//servicesRouter.get('/battery/:clientID', verifyTokenMiddleware(['user','admin']), /* getChangeBatteryOlderDate */);
 servicesRouter.get('/paymentPending', verifyTokenMiddleware(['user','admin']), getServicesPaymentPending);
 servicesRouter.get('/edit/:serviceID/:clientID', verifyTokenMiddleware(['user','admin']), getServiceByIdController);
 servicesRouter.post('/new/:clientID', verifyTokenMiddleware(['user','admin']), createServiceController);
