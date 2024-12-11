@@ -4,7 +4,7 @@ import { sendEmail } from "../utils/mail.util.js";
 import jwt from 'jsonwebtoken';
 import PersonRepository from "../repositories/persons.respositorie.js";
 
-const bcrypt = require('bcryptjs');
+var bcrypt = require('bcryptjs')
 
 const loginController = async(req, res) => {
   try {
