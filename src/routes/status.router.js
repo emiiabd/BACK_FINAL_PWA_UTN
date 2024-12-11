@@ -3,6 +3,6 @@ import { validateLoginData } from '../middlewares/validation.middleware.js';
 
 const statusRouter = express.Router();
 
-statusRouter.get('/', validateLoginData, (req, res) => res.send('OK'));
+statusRouter.get('/', (req, res) => res.send('OK'));
 
 export default statusRouter;
