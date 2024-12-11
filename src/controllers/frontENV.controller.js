@@ -7,7 +7,7 @@ import { response200, response500 } from "../utils/responses.util.js"
 
 const getGoogleMapsFrontApiKey = async (req, res) => {
   try {
-    const response = response200('OK', { key: process.env.G_MAPS_FRONT_KEY })
+    const response = response200('OK', { api_key: process.env.G_MAPS_FRONT_KEY })
     return res.status(200).json(response)
   }
   catch (error) {
