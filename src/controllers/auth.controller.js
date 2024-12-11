@@ -1,10 +1,9 @@
 import UserRepository from "../repositories/user.repositorie.js";
 import { response200, response400, response403, response500 } from "../utils/responses.util.js";
 import { sendEmail } from "../utils/mail.util.js";
+import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import PersonRepository from "../repositories/persons.respositorie.js";
-
-var bcrypt = require('bcryptjs')
 
 const loginController = async(req, res) => {
   try {
