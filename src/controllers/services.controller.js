@@ -206,8 +206,6 @@ const updateServiceByIdController = async (req, res) => {
     
     console.log(data)
     const clientUpdate = await ClientsRepository.updateClientBatteryById({ cambioBateria: data.cambioBateria ? data.cambioBateria : null, alertaBateria: data.alertaBateria }, data.clientID);
-
-    //console.log(clientUpdate)
     
     if (serviceID == 0){
       await ServicesRepository.createService(data);
@@ -266,5 +264,4 @@ export {
   deleteServiceByIdController,
   getServicesByClientIdController,
   createServiceController,
-  
 }

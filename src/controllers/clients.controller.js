@@ -139,21 +139,8 @@ const getProductsByClientIdController = async (req, res) => {
 
     let productsResponse = [];
 
-    const dataSchema = [
-      {
-      nombre: 'Producto',
-      fecha: 'Fecha',
-      observaciones: 'Observaciones',
-      },
-      {
-        nombre: 'Producto2',
-        fecha: 'Fecha2',
-        observaciones: 'Observaciones2',
-      }
-  ]
   //  GUARDAR PRODUCTOS
   //await ClientsRepository.updateClientProductsById({JSON: JSON.stringify(dataSchema)}, clientID);
-    
 
   if(client.mt_cli_productosInstalados) {
       productsResponse = JSON.parse(client.mt_cli_productosInstalados);
@@ -194,8 +181,6 @@ const updateProductByClientIdController = async (req, res) => {
   }
 }
 
-
-
 export { 
   getClientsController,
   getClientByIdController,
@@ -204,31 +189,3 @@ export {
   getProductsByClientIdController,
   updateProductByClientIdController
 }
-
-/* {
-  mt_cli_id: 21,
-  mt_cli_per_id: 37,
-  mt_cli_direccion: 'HONORIO BARRAQUERO 182- GODOY CRUZ',
-  mt_cli_fecha_nacimiento: 2017-04-29T03:00:00.000Z,
-  mt_cli_telefono: '4249107',
-  mt_cli_tipo_consumidor: 3,
-  mt_cli_banco: '',
-  mt_cli_tipo_cuenta: null,
-  mt_cli_cbu: '',
-  mt_cli_provincia: 'MENDOZA',
-  mt_cli_localidad: 'GODOY CRUZ',
-  mt_cli_cuil: '',
-  mt_cli_telefono2: '156537166',
-  mt_cli_observaciones: '',
-  mt_cli_tipo_cliente: 17
-
-  
-} 
-  
-{
-  mt_per_id: 30,
-  mt_per_nombre: 'FABIAN',
-  mt_per_apellido: 'ANDREU',
-  mt_per_email: ''
-}
-*/

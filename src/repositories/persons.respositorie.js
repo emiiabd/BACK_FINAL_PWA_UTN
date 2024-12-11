@@ -1,12 +1,5 @@
 import DB_POOL from "../DB/config.js";
 
-/* 
-`mt_per_id` 
-`mt_per_nombre` 
-`mt_per_apellido` 
-`mt_per_email` 
-*/
-
 class PersonRepository {
   static createPerson = async (person) => {
     try{

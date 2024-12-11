@@ -1,21 +1,3 @@
-/* 
-`mt_cli_id` int(11) NOT NULL AUTO_INCREMENT,
-`mt_cli_per_id` int(11) NOT NULL,  ----fk persona
-`mt_cli_direccion` varchar(300) DEFAULT NULL,
-`mt_cli_fecha_nacimiento` date NOT NULL,
-`mt_cli_telefono` varchar(13) DEFAULT NULL,
-`mt_cli_tipo_consumidor` int(11) NOT NULL, ----fk parametro
-`mt_cli_banco` varchar(45) DEFAULT NULL,
-`mt_cli_tipo_cuenta` int(11) NOT NULL, ----fk parametro
-`mt_cli_cbu` varchar(22) NOT NULL,
-mt_cli_provincia varchar(300)
-mt_cli_localidad varchar(300)
-mt_cli_cuil varchar(22)
-mt_cli_telefono2 varchar(13)
-mt_cli_observaciones varchar(3000)
-mt_cli_tipo_cliente int(11) ----fk parametro
- */
-
 import DB_POOL from "../DB/config.js";
 
 class ClientsRepository {
@@ -31,14 +13,10 @@ class ClientsRepository {
     }
   }
 
-
   static async getClientBatteryAlert (state = 0) {
     try {
-
     const query = `SELECT * FROM mt_clientes WHERE mt_cli_alertaBateria = ? AND mt_cli_cambioBateria IS NOT NULL `;
     const [rows, col] = await DB_POOL.execute(query, [0, ]);
-    /* console.log(rows.length + 'asdsad') */
-
     return rows.length > 0 ? rows : [];
     }
     catch (error) {
@@ -167,7 +145,6 @@ class ClientsRepository {
       mt_cli_cambioBateria = ?,
       mt_cli_alertaBateria = ?
       WHERE mt_cli_id = ?`
-      //console.log(cambioBateria &&cambioBateria.toISOString().split('T')[0], alertaBateria, id)
       const [rows, col] = await DB_POOL.execute(query,
         [
           cambioBateria && new Date(cambioBateria).toISOString().split('T')[0],
@@ -210,13 +187,5 @@ class ClientsRepository {
   }
 
 }
-
-/* const asd = async () => {
-  const result = await ClientsRepository.getClientBatteryAlert()
-}
-
-asd() */
-
-
 
 export default ClientsRepository

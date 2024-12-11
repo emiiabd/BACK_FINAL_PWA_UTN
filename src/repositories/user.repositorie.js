@@ -1,13 +1,6 @@
 import DB_POOL from "../DB/config.js";
 import { PersonsBuilder } from "../utils/builders/db.builder.js";
 import PersonRepository from "./persons.respositorie.js";
-/* 
-`mt_usr_id` ID
-`mt_usr_per_id` PERSONS FK ID
-`mt_usr_username` 
-`mt_usr_password` 
-`mt_usr_rol` 1-Admin 2-User
-*/
 
 class UserRepository {
   static async getUserByUser(username) {

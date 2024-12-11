@@ -1,10 +1,4 @@
 import DB_POOL from "../DB/config.js";
-/* 
-`tt_param_id`
-`tt_param_nombre` 
-`tt_param_codigo` 
-*/
-
 
 const PARAMS_CODE = {
   PARAMS_TIPO_CUENTA : "TIPO_CUENTA",

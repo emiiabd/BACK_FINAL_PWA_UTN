@@ -1,7 +1,6 @@
 import { body, validationResult } from 'express-validator'
 import { response400 } from '../utils/responses.util.js'
 
-
 export const validateEmail = [
   body('email')
     .isEmail().withMessage('Formato de correo inválido')

@@ -1,10 +1,5 @@
 import { response200, response500 } from "../utils/responses.util.js"
 
-/* 
-  G_MAPS_API_KEY: 'AIzaSyDho985O13eR1wkuDX00c2vWwkA8xabyCc',
-  G_CAPTCHA_API_KEY: '6LeezH0qAAAAAImjUoIqHzED8LdLmJHIwQAd1wzM' 
-*/
-
 const getGoogleMapsFrontApiKey = async (req, res) => {
   try {
     const G_MAPS_API_KEY = process.env.G_MAPS_FRONT_KEY

@@ -1,4 +1,3 @@
-
 const POSTReCaptcha = async (url) => {
   try {
     const response = await fetch(url, { method: 'POST' })

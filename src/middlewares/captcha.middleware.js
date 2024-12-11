@@ -1,16 +1,12 @@
-
-// url verify https://www.google.com/recaptcha/api/siteverify?secret=secret1&response=response1
-
 import ENVIROMENT from "../config/enviroment.config.js";
 import POSTReCaptcha from "../fetching/captcha.fetching.js";
-import { response403, response500 } from "../utils/responses.util.js";
+import { response500 } from "../utils/responses.util.js";
 
 const verifyCaptchaMiddleware = () => {
   return async (req, res, next) => {
     try {
       const secret = ENVIROMENT.ReCAPTCHA_KEY;
       const captchaKey = req.params.ReCaptcha;
-
       
       const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${captchaKey}`;
       

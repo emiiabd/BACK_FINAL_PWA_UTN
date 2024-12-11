@@ -15,7 +15,6 @@ const verifyTokenMiddleware = (allowedRoles = []) => {
 
       req.user = jwt.verify(token, ENVIROMENT.JWT_SECRET);
 
-
       if (allowedRoles.length > 0 && !allowedRoles.includes(req.user.role)) throw {
         ok: false,
         response: response403('AUTH ERROR', { detail: 'User not authorized' })
