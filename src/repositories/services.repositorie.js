@@ -9,21 +9,18 @@ class ServicesRepository {
   static async getServicesByState (state) {
     const query = `SELECT * FROM tt_servicios WHERE tt_srvc_estado = ? `;
     const [rows, col] = await DB_POOL.execute(query, [state]);
-    connection.release()
     return rows.length > 0 ? rows : null;
   }
   
   static async getServicesPaymentPending () {
     const query = `SELECT * FROM tt_servicios WHERE tt_srvc_estadoPago = ? `;
     const [rows, col] = await DB_POOL.execute(query, [0]);
-    connection.release()
     return rows.length > 0 ? rows : null;
   }
 
   static async getServicesByClientId (id) {
     const query = `SELECT * FROM tt_servicios WHERE tt_srvc_cli_id = ? `;
     const [rows, col] = await DB_POOL.execute(query, [id]);
-    connection.release()
     return rows.length > 0 ? rows : null;
   }
 
@@ -31,7 +28,6 @@ class ServicesRepository {
     try {
       const query = `SELECT * FROM tt_servicios WHERE tt_srvc_id = ?`;
       const [rows, col] = await DB_POOL.execute(query, [id]);
-      connection.release()
       return rows.length > 0 ? rows[0] : null;
     } 
     catch (error) {
@@ -75,7 +71,6 @@ class ServicesRepository {
         alertaBateria
       ])
 
-      connection.release()
       return {
         id: rows.insertId,
         ...service
@@ -122,7 +117,6 @@ class ServicesRepository {
         serviceID
       ])
 
-      connection.release()
       return {
         serviceID,
         rows
@@ -138,7 +132,6 @@ class ServicesRepository {
     try {
       const query = `DELETE FROM tt_servicios WHERE tt_srvc_id = ?`
       const [rows, col] = await DB_POOL.execute(query, [id]);
-      connection.release()
       return rows
     }
     catch (error) {
@@ -150,7 +143,6 @@ class ServicesRepository {
     try {
       const query = `DELETE FROM tt_servicios WHERE tt_srvc_cli_id = ?`
       const [rows, col] = await DB_POOL.execute(query, [id]);
-      connection.release()
       return rows
     }
     catch (error) {

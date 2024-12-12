@@ -37,9 +37,6 @@ class UserRepository {
       .build()
       
       const person = await PersonRepository.createPerson(personObj);
-      
-      console.log(person)
-
       const query = `INSERT INTO mt_usuarios (mt_usr_per_id, mt_usr_username, mt_usr_password, mt_usr_rol) VALUES ( ?, ?, ?, 1)`
       const [rows, col] = await DB_POOL.execute(query, 
       [

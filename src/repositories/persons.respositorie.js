@@ -8,7 +8,6 @@ class PersonRepository {
       const query = `INSERT INTO mt_personas ( mt_per_nombre, mt_per_apellido, mt_per_email) VALUES (?, ?, ?)`
 
       const [rows, col] = await DB_POOL.execute(query, [nombre, apellido, email]);
-
       return {
         id: rows.insertId,
         nombre, apellido, email
