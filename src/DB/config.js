@@ -6,12 +6,14 @@ const DB_POOL = mysql.createPool({
   user: ENVIROMENT.MYSQL.USERNAME,
   password: ENVIROMENT.MYSQL.PASSWORD,
   database: ENVIROMENT.MYSQL.DATABASE,
-  connectionLimit: 100,
+  waitForConnections: true,
+  connectionLimit: 5, // Límite máximo
+  queueLimit: 0, // Ilimitado en cola
 });
 
 const checkConnection = async () => {
   try {
-    await DB_POOL.getConnection();
+    const connection = await DB_POOL.getConnection();
     console.log("DB is connected");
     connection.release()
   } catch (error) {

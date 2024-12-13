@@ -8,6 +8,7 @@ class UserRepository {
       
       const query = `SELECT * FROM mt_usuarios WHERE mt_usr_username = ?`
       const [rows, col] = await DB_POOL.execute(query, [username]);
+      DB_POOL.end()
       return rows.length > 0 ? rows[0] : null
     }
     catch(error){
@@ -20,6 +21,7 @@ class UserRepository {
       
       const query = `SELECT * FROM mt_usuarios WHERE mt_usr_id = ?`
       const [rows, col] = await DB_POOL.execute(query, [id]);
+      DB_POOL.end()
       return rows.length > 0 ? rows[0] : null
     }
     catch(error){
