@@ -4,6 +4,7 @@ import { sendEmail } from "../utils/mail.util.js";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import PersonRepository from "../repositories/persons.respositorie.js";
+import e from "cors";
 
 const loginController = async(req, res) => {
   try {
@@ -90,6 +91,7 @@ const registerController = async(req, res) => {
     const response = response400('INTERNAL SERVER ERROR', 
       {
       detail: error.detail || error.message,
+      error
     });
     return res.status(400).json(response);
   }
