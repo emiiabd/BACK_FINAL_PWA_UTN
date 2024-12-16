@@ -8,7 +8,8 @@ class UserRepository {
       
       const query = `SELECT * FROM mt_usuarios WHERE mt_usr_username = ?`
       const [rows, col] = await DB_POOL.execute(query, [username]);
-      DB_POOL.end()
+      const finish = await DB_POOL.end()
+      console.log(finish)
       return rows.length > 0 ? rows[0] : null
     }
     catch(error){

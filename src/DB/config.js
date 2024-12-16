@@ -6,8 +6,7 @@ const DB_POOL = mysql.createPool({
   user: ENVIROMENT.MYSQL.USERNAME,
   password: ENVIROMENT.MYSQL.PASSWORD,
   database: ENVIROMENT.MYSQL.DATABASE,
-  waitForConnections: true,
-  connectionLimit: 5, // Límite máximo
+  connectionLimit: 4, // Límite máximo
   queueLimit: 0, // Ilimitado en cola
 });
 
