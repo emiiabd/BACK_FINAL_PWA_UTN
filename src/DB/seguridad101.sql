@@ -72,7 +72,6 @@
   CONSTRAINT `fk_mt_usr_per_id` FOREIGN KEY (`mt_usr_per_id`) REFERENCES `mt_personas` (`mt_per_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
 
-
 ---- tertiary table servicios (tt_servicios) ----
 
 	CREATE TABLE `tt_servicios` (
